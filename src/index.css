@@ -1,0 +1,187 @@
+/* *************** Style Reset ****************** */
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* 2. Remove default margin */
+* { margin: 0; }
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html { interpolate-size: allow-keywords; }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select { font: inherit; }
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+
+/* 9. Improve line wrapping */
+p { text-wrap: pretty;}
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next { isolation: isolate; }
+
+/* ***************** Main ******************* */
+
+body {
+    background: no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #474747;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Inter', sans-serif; */
+    font-size: 1rem;
+    font-weight: 500;
+    text-shadow: 4px 4px 8px #333;
+    user-select: none;
+    /*  */
+    /* min-height: 100vh; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    /* position: relative; */
+}
+
+.background__img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  /* top: 0; */
+  /* left:0; */
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, filter 0.8s ease-in-out;
+  filter: blur(10px);
+  z-index: -100;
+  /*  */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.background__img.fade-in {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 15px;
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+} */
+
+#time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#clock, #date {
+  font-size: 150px;
+  font-weight: 150;
+  text-align: center;
+  text-shadow: 0px 4px 8px rgba(0,0,0,0.4),
+  0px 8px 13px rgba(0,0,0,0.1),
+  0px 18px 23px rgba(0,0,0,0.1);
+  margin: 0;
+}
+
+#date {
+  font-size: 50px;
+  /* padding-bottom: 250px; */
+}
+
+#weather--div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+#weather--div > img {
+  height: 80px;
+  width: auto;
+}
+
+#weather--div > h2 {
+  font-size: 35px;
+  font-weight: 100;
+}
+
+#weather--div > p {
+  width: 50%;
+  margin: -55px 0 0 10px;
+}
+
+.quotes--section,
+.info--div {
+  backdrop-filter: blur(5px);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  max-width: 75%;
+  margin: 0  auto;
+  padding: .3rem .75rem;
+  transition: backdrop-filter 0.3s ease;
+  /* background-color: rgba(0,0,0,0.025); */
+}
+
+.quotes--section:hover,
+.info--div:hover {
+  backdrop-filter: blur(50px);
+  transition: 0.3s ease;
+}
+
+/* .quote__author {
+  align-self: flex-end;
+  padding-right: .45rem;
+} */
+
+.img__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.info--div {
+  border-radius: 7px;
+  font-size: .7rem;
+  margin: 0;
+  padding: .1rem .5rem;
+}
