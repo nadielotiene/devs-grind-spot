@@ -1,5 +1,7 @@
 import api from "./api";
 
+// https://unsplash.com/documentation
+
 const UNSPLASH_URL = "https://api.unsplash.com/photos/random";
 const UNSPLASH_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 

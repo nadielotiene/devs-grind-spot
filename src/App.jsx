@@ -1,7 +1,7 @@
 import Background from './components/Background'
-import Clock from './components/Clock'
 import Weather from './components/Weather'
-import Quotes from './components/Quotes.jsx'
+import Clock from './components/Clock'
+import Quotes from './components/Quotes'
 import './index.css'
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <Background />
+      <Weather />
       <Clock />
       <Quotes />
     </>
@@ -16,6 +17,3 @@ function App() {
 }
 
 export default App
-
-{/* <Clock />
-<Weather /> */}

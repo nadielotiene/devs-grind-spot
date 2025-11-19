@@ -5,19 +5,19 @@ export default function Clock() {
     const [date, setDate] = useState("");
 
     useEffect(() => {
-        const interval = setInterval(() => {
-        const date = new Date();
-        
-        const currentTime = date.toLocaleTimeString([], { timeStyle:"short" });
-        const noMeridiemTime = currentTime.replace("AM", "").replace("PM", "");
+        function updateClock() {
+            const date = new Date();
+            const currentTime = date.toLocaleTimeString([], { timeStyle:"short" });
+            const noMeridiemTime = currentTime.replace("AM", "").replace("PM", "");
+            const options = { weekday: "short", month: "short", day: "numeric" };
+            const currentDate = date.toLocaleDateString("en-US", options);
+            
+            setTime(noMeridiemTime);
+            setDate(currentDate);
+        };
 
-        const options = { weekday: "short", month: "short", day: "numeric" };
-        const currentDate = date.toLocaleDateString("en-US", options);
-
-        setTime(noMeridiemTime);
-        setDate(currentDate)
-        }, 1000);
-
+        updateClock();
+        const interval = setInterval(updateClock, 1000);
         return () => clearInterval(interval);
     }, []);
 

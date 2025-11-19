@@ -44,7 +44,7 @@ export default function Background() {
             <div className="img__info">
                 {imageData?.location ? (
                     <div className="info--div location-info">
-                        <p className="img__location">
+                        <p className="img__location info__text">
                             Location: {imageData.location}
                         </p>
                     </div>
@@ -52,7 +52,7 @@ export default function Background() {
 
                 {imageData?.author ? (
                     <div className="info--div author-info">
-                        <p className="img__author">
+                        <p className="img__author info__text">
                             Photo by: {imageData.author}
                         </p>
                     </div>
